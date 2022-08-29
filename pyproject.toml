@@ -16,6 +16,7 @@ opencv-python = "^4.6.0"
 jupyter = "^1.0.0"
 pytesseract = "^0.3.10"
 spacy = "^3.4.1"
+uuid = "^1.30"
 
 [tool.poetry.dev-dependencies]
 
