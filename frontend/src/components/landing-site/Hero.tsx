@@ -4,7 +4,7 @@ import RightOverlay from '../../assets/images/RightOverlay.svg';
 
 const Hero = () => {
   return (
-    <div className="overflow-y-hidden bg-gray-100 py-12">
+    <section className="overflow-y-hidden bg-gray-100 py-12">
       <div className="w-full px-6">
         <div className="container relative mx-auto mt-8 flex flex-col items-center rounded-lg bg-primary pt-12 pb-24 sm:pt-24 sm:pb-32 md:pb-48 lg:pb-56 xl:pb-64">
           <img
@@ -46,7 +46,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
