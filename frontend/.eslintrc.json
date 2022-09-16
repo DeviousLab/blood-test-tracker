@@ -4,7 +4,7 @@
     "airbnb-base",
     "next/core-web-vitals", // Needed to avoid warning in next.js build: 'The Next.js plugin was not detected in your ESLint configuration'
     "plugin:prettier/recommended",
-    "next/babel"
+    "next"
   ],
   "rules": {
     "prettier/prettier": [
@@ -30,7 +30,7 @@
         "airbnb-typescript",
         "next/core-web-vitals",
         "plugin:prettier/recommended",
-        "next/babel"
+        "next"
       ],
       "parserOptions": {
         "project": "./tsconfig.json"
