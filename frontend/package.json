@@ -2,6 +2,11 @@
   "name": "blood-test-tracker",
   "version": "0.1.0",
   "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0",
+    "yarn": ">=1.22.0",
+    "npm": "please-use-yarn"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
