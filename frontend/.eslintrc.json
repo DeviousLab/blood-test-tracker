@@ -32,10 +32,6 @@
         "plugin:prettier/recommended",
         "next"
       ],
-      "parserOptions": {
-        "project": "tsconfig.json",
-        "sourceType": "module"
-      },
       "rules": {
         "prettier/prettier": [
           "error",
