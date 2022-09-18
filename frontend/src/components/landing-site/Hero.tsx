@@ -1,10 +1,11 @@
+/* eslint-disable tailwindcss/no-custom-classname */
 import Dashboard from '../../assets/images/dashboard.svg';
 import LeftOverlay from '../../assets/images/LeftOverlay.svg';
 import RightOverlay from '../../assets/images/RightOverlay.svg';
 
 const Hero = () => {
   return (
-    <section className="overflow-y-hidden bg-gray-100 py-12">
+    <section className="overflow-y-hidden py-12">
       <div className="w-full px-6">
         <div className="container relative mx-auto mt-8 flex flex-col items-center rounded-lg bg-primary pt-12 pb-24 sm:pt-24 sm:pb-32 md:pb-48 lg:pb-56 xl:pb-64">
           <img
