@@ -4,7 +4,7 @@ import { MdDocumentScanner, MdPrivacyTip } from 'react-icons/md';
 
 const Features = () => {
   return (
-    <section className="container mx-auto pt-16">
+    <section className="mx-auto pt-16">
       <div>
         <div role="contentinfo" className="flex flex-col items-center px-4">
           <p
@@ -13,12 +13,12 @@ const Features = () => {
           >
             What does it do?
           </p>
-          <h1
+          <h2
             tabIndex={0}
-            className="pt-4 text-center font-Inter text-4xl font-bold leading-10 text-logo focus:outline-none md:w-9/12 lg:w-5/12 lg:text-4xl"
+            className="pt-4 text-center font-Inter text-4xl font-bold leading-10 tracking-tight text-logo focus:outline-none md:w-9/12 lg:w-5/12 lg:text-4xl"
           >
             Features
-          </h1>
+          </h2>
         </div>
         <div
           tabIndex={0}
@@ -39,7 +39,7 @@ const Features = () => {
             <div className="w-10/12">
               <h2
                 tabIndex={0}
-                className="text-lg font-bold leading-tight text-gray-800 focus:outline-none"
+                className="text-lg font-semibold leading-tight text-gray-800 focus:outline-none"
               >
                 No User Entry
               </h2>

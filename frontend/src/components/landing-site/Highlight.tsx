@@ -23,8 +23,7 @@ const Highlight = () => {
               Core Features
             </p>
             <h2 className="mb-6 max-w-lg font-Inter text-3xl font-bold tracking-tight text-logo sm:text-4xl sm:leading-none">
-              Don&apos;t sift through
-              <br className="hidden md:block" />
+              Don&apos;t sift through <br className="hidden md:block" />
               piles of{' '}
               <span className="relative px-1">
                 <div className="absolute inset-x-0 bottom-0 h-3 -skew-x-12 bg-accent-light" />
@@ -50,12 +49,12 @@ const Highlight = () => {
         </div>
         <div className="relative">
           <img
-            className="absolute -left-16 -top-16 -z-[1]"
+            className="absolute -left-16 -top-16 -z-[1] hidden md:block"
             src={RightTopFeature.src}
             alt="background graphics"
           />
           <img
-            className="absolute bottom-16 -right-16 -z-[1]"
+            className="absolute -z-[1] hidden md:block lg:-right-8 lg:bottom-8 xl:bottom-16 xl:-right-16"
             src={RightBottomFeature.src}
             alt="background graphics"
           />

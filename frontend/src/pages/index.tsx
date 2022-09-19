@@ -6,6 +6,7 @@ import Footer from '../components/landing-site/Footer';
 import Header from '../components/landing-site/Header';
 import Hero from '../components/landing-site/Hero';
 import Highlight from '../components/landing-site/Highlight';
+import Pricing from '../components/landing-site/Pricing';
 import Process from '../components/landing-site/Process';
 
 const Index: NextPage = () => {
@@ -16,6 +17,7 @@ const Index: NextPage = () => {
       <Features />
       <Highlight />
       <Process />
+      <Pricing />
       <Banner />
       <Footer />
     </>

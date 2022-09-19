@@ -1,25 +1,13 @@
 /* eslint-disable tailwindcss/no-custom-classname */
 import Dashboard from '../../assets/images/dashboard.svg';
-import LeftOverlay from '../../assets/images/LeftOverlay.svg';
-import RightOverlay from '../../assets/images/RightOverlay.svg';
 
 const Hero = () => {
   return (
     <section className="overflow-y-hidden py-12">
       <div className="w-full px-6">
-        <div className="container relative mx-auto mt-8 flex flex-col items-center rounded-lg bg-primary pt-12 pb-24 sm:pt-24 sm:pb-32 md:pb-48 lg:pb-56 xl:pb-64">
-          <img
-            className="absolute right-0 top-0 mr-2 mt-2 lg:mr-12 lg:mt-12"
-            src={LeftOverlay.src}
-            alt="bg"
-          />
-          <img
-            className="absolute bottom-0 left-0 ml-2 mb-2 lg:ml-12 lg:mb-12"
-            src={RightOverlay.src}
-            alt="bg"
-          />
+        <div className="container relative mx-auto mt-8 flex flex-col items-center rounded-lg bg-primary bg-[url('../assets/images/ProcessPattern.png')] bg-cover bg-no-repeat pt-12 pb-24 sm:pt-24 sm:pb-32 md:pb-48 lg:pb-56 xl:pb-64">
           <div className="mb-5 w-11/12 sm:mb-10 sm:w-2/3">
-            <h1 className="text-center font-Inter text-2xl leading-tight text-white sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
+            <h1 className="text-center font-Inter text-2xl leading-tight tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
               Track your lab results
             </h1>
             <p className="mt-2 text-center font-Arimo text-white">
@@ -31,7 +19,7 @@ const Hero = () => {
             </p>
           </div>
           <div className="mb-10 flex items-center justify-center sm:mb-20">
-            <button className="rounded-3xl border bg-white px-4 py-1 text-sm text-accent transition duration-300 ease-in-out hover:border-white hover:bg-accent	hover:text-white focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 sm:px-8 sm:py-3 lg:text-xl">
+            <button className="rounded-3xl border bg-white px-4 py-1 font-Arimo text-sm text-accent transition duration-300 ease-in-out hover:border-white hover:bg-accent	hover:text-white focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 sm:px-8 sm:py-3 lg:text-xl">
               Learn more
             </button>
           </div>
