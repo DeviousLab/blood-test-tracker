@@ -7,7 +7,7 @@ import RightTopFeature from '../../assets/images/RightTopFeature.svg';
 
 const Highlight = () => {
   return (
-    <div className="mx-auto px-4 py-16 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8 lg:py-20">
+    <section className="mx-auto px-4 py-16 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8 lg:py-20">
       <div className="grid gap-5 gap-y-10 lg:grid-cols-2">
         <div className="flex flex-col justify-center">
           <div className="relative mb-6 max-w-xl">
@@ -38,14 +38,6 @@ const Highlight = () => {
               the touch of a button on our dashboard
             </p>
           </div>
-          <a
-            href="/"
-            className="inline-flex w-40 items-center justify-center rounded-3xl border bg-primary p-3 font-Arimo font-medium text-white"
-            aria-label="Get Started"
-            title="Get Started"
-          >
-            Get Started
-          </a>
         </div>
         <div className="relative">
           <img
@@ -65,7 +57,7 @@ const Highlight = () => {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 export default Highlight;

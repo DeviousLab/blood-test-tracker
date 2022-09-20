@@ -1,7 +1,11 @@
 /* eslint-disable tailwindcss/no-custom-classname */
 const Process = () => {
   return (
-    <section className="bg-primary bg-[url('../assets/images/ProcessPattern.png')] bg-cover bg-no-repeat px-4 py-16 sm:max-w-xl md:max-w-full md:px-24 lg:w-screen lg:px-8 lg:py-20">
+    <section
+      id="process"
+      // eslint-disable-next-line tailwindcss/no-contradicting-classname
+      className="bg-primary bg-[url('../assets/images/ProcessPattern.png')] bg-cover bg-center bg-no-repeat px-4 py-16 sm:max-w-xl md:max-w-full md:px-24 lg:w-screen lg:px-8 lg:py-20"
+    >
       <div role="contentinfo" className="flex flex-col items-center px-4">
         <p
           tabIndex={0}

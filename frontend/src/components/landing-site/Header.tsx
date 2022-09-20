@@ -1,4 +1,5 @@
 /* eslint-disable tailwindcss/no-custom-classname */
+import Link from 'next/link';
 import { useState } from 'react';
 
 import Logo from '../../assets/images/temp-logo.svg';
@@ -7,77 +8,83 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="mx-auto px-4 py-5 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8">
+    <header className="mx-auto px-4 py-5 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8">
       <div className="relative flex items-center justify-between">
         <div className="flex items-center">
-          <a
-            href="/"
-            aria-label="triage"
-            title="triage"
-            className="mr-8 inline-flex items-center"
-          >
-            <img
-              className="w-8 cursor-pointer"
-              src={Logo.src}
-              alt="triage logo"
-            />
-            <span className="ml-2 font-Poppins text-xl font-bold text-logo">
-              triage
-            </span>
-          </a>
+          <Link href="/">
+            <a
+              aria-label="triage"
+              title="triage"
+              className="mr-8 inline-flex items-center"
+            >
+              <img
+                className="w-8 cursor-pointer"
+                src={Logo.src}
+                alt="triage logo"
+              />
+              <span className="ml-2 font-Poppins text-xl font-bold text-logo">
+                triage
+              </span>
+            </a>
+          </Link>
           <ul className="hidden items-center space-x-8 lg:flex">
             <li>
-              <a
-                href="/"
-                aria-label="Features of the product"
-                title="Features of the product"
-                className="font-medium tracking-wide text-logo transition-colors duration-200 hover:text-accent-dark"
-              >
-                Features
-              </a>
+              <Link href="#features">
+                <a
+                  aria-label="Features of the product"
+                  title="Features of the product"
+                  className="border-b-4 border-transparent font-medium tracking-wide text-logo transition-colors duration-200 hover:border-accent-light hover:text-accent"
+                >
+                  Features
+                </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/"
-                aria-label="Process of how the product works"
-                title="Process of how the product works"
-                className="font-medium tracking-wide text-logo transition-colors duration-200 hover:text-accent-dark"
-              >
-                Process
-              </a>
+              <Link href="#process">
+                <a
+                  aria-label="Process of how the product works"
+                  title="Process of how the product works"
+                  className="border-b-4 border-transparent font-medium tracking-wide text-logo transition-colors duration-200 hover:border-accent-light hover:text-accent"
+                >
+                  Process
+                </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/"
-                aria-label="Product pricing"
-                title="Product pricing"
-                className="font-medium tracking-wide text-logo transition-colors duration-200 hover:text-accent-dark"
-              >
-                Pricing
-              </a>
+              <Link href="#pricing">
+                <a
+                  aria-label="Product pricing"
+                  title="Product pricing"
+                  className="border-b-4 border-transparent font-medium tracking-wide text-logo transition-colors duration-200 hover:border-accent-light hover:text-accent"
+                >
+                  Pricing
+                </a>
+              </Link>
             </li>
           </ul>
         </div>
         <ul className="hidden items-center space-x-8 lg:flex">
           <li>
-            <a
-              href="/"
-              aria-label="Sign in"
-              title="Sign in"
-              className="font-medium tracking-wide text-logo transition-colors duration-200 hover:text-accent-dark"
-            >
-              Sign in
-            </a>
+            <Link href="/account">
+              <a
+                aria-label="Sign in"
+                title="Sign in"
+                className="border-b-4 border-transparent font-medium tracking-wide text-logo transition-colors duration-200 hover:border-accent-light hover:text-accent"
+              >
+                Sign In
+              </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="/"
-              className="inline-flex h-12 items-center justify-center rounded-3xl border border-primary bg-transparent px-6 font-medium text-primary transition duration-300 ease-in-out hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 sm:px-8 sm:py-3 md:block lg:text-base"
-              aria-label="Sign up"
-              title="Sign up"
-            >
-              Sign up 🡒
-            </a>
+            <Link href="/account/register">
+              <a
+                className="inline-flex h-12 items-center justify-center rounded-3xl border border-primary bg-transparent px-6 font-medium text-primary transition duration-300 ease-in-out hover:bg-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 sm:px-8 sm:py-3 md:block lg:text-base"
+                aria-label="Sign up"
+                title="Sign up"
+              >
+                Sign up 🡒
+              </a>
+            </Link>
           </li>
         </ul>
         <div className="lg:hidden">
@@ -107,21 +114,22 @@ const Header = () => {
               <div className="rounded border bg-white p-5 shadow-sm">
                 <div className="mb-4 flex items-center justify-between">
                   <div>
-                    <a
-                      href="/"
-                      aria-label="Company"
-                      title="Company"
-                      className="inline-flex items-center"
-                    >
-                      <img
-                        className="w-8 cursor-pointer"
-                        src={Logo.src}
-                        alt="logo"
-                      />
-                      <span className="ml-2 font-Poppins text-xl font-bold text-logo">
-                        triage
-                      </span>
-                    </a>
+                    <Link href="/">
+                      <a
+                        aria-label="Company"
+                        title="Company"
+                        className="inline-flex items-center"
+                      >
+                        <img
+                          className="w-8 cursor-pointer"
+                          src={Logo.src}
+                          alt="logo"
+                        />
+                        <span className="ml-2 font-Poppins text-xl font-bold text-logo">
+                          triage
+                        </span>
+                      </a>
+                    </Link>
                   </div>
                   <div>
                     <button
@@ -142,54 +150,59 @@ const Header = () => {
                 <nav>
                   <ul className="space-y-4">
                     <li>
-                      <a
-                        href="/"
-                        aria-label="Features of the product"
-                        title="Features of the product"
-                        className="font-medium tracking-wide text-logo transition-colors duration-200 hover:text-accent-dark"
-                      >
-                        Features
-                      </a>
+                      <Link href="#features">
+                        <a
+                          aria-label="Features of the product"
+                          title="Features of the product"
+                          className="font-medium tracking-wide text-logo transition-colors duration-200 hover:text-accent"
+                        >
+                          Features
+                        </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="/"
-                        aria-label="Process of how the product works"
-                        title="Process of how the product works"
-                        className="font-medium tracking-wide text-logo transition-colors duration-200 hover:text-accent-dark"
-                      >
-                        Process
-                      </a>
+                      <Link href="#process">
+                        <a
+                          aria-label="Process of how the product works"
+                          title="Process of how the product works"
+                          className="font-medium tracking-wide text-logo transition-colors duration-200 hover:text-accent"
+                        >
+                          Process
+                        </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="/"
-                        aria-label="Product pricing"
-                        title="Product pricing"
-                        className="font-medium tracking-wide text-logo transition-colors duration-200 hover:text-accent-dark"
-                      >
-                        Pricing
-                      </a>
+                      <Link href="#pricing">
+                        <a
+                          aria-label="Product pricing"
+                          title="Product pricing"
+                          className="font-medium tracking-wide text-logo transition-colors duration-200 hover:text-accent"
+                        >
+                          Pricing
+                        </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="/"
-                        aria-label="Sign in"
-                        title="Sign in"
-                        className="font-medium tracking-wide text-logo transition-colors duration-200 hover:text-accent-dark"
-                      >
-                        Sign in
-                      </a>
+                      <Link href="/account">
+                        <a
+                          aria-label="Sign in"
+                          title="Sign in"
+                          className="font-medium tracking-wide text-logo transition-colors duration-200 hover:text-accent"
+                        >
+                          Sign In
+                        </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="/"
-                        className="inline-flex h-12 w-full items-center justify-center rounded bg-primary px-6 font-medium tracking-wide text-white shadow-md transition duration-200 hover:bg-accent focus:outline-none"
-                        aria-label="Sign up"
-                        title="Sign up"
-                      >
-                        Sign up
-                      </a>
+                      <Link href="/account/register">
+                        <a
+                          className="inline-flex h-12 w-full items-center justify-center rounded bg-primary px-6 font-medium tracking-wide text-white shadow-md transition duration-200 hover:bg-accent focus:outline-none"
+                          aria-label="Sign up"
+                          title="Sign up"
+                        >
+                          Sign Up 🡒
+                        </a>
+                      </Link>
                     </li>
                   </ul>
                 </nav>
@@ -198,7 +211,7 @@ const Header = () => {
           )}
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 

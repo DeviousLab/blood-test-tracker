@@ -1,7 +1,13 @@
 /* eslint-disable tailwindcss/no-custom-classname */
+
+import Link from 'next/link';
+
 const Pricing = () => {
   return (
-    <div className="mx-auto px-4 py-16 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8 lg:py-20">
+    <section
+      id="pricing"
+      className="mx-auto px-4 py-16 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8 lg:py-20"
+    >
       <div className="mb-10 max-w-xl sm:text-center md:mx-auto md:mb-12 lg:max-w-2xl">
         <div>
           <p
@@ -114,23 +120,46 @@ const Pricing = () => {
                   </div>
                   <p className="font-medium text-gray-800">No limitations</p>
                 </li>
+                <li className="flex items-center">
+                  <div className="mr-2">
+                    <svg
+                      className="h-4 w-4 text-accent"
+                      viewBox="0 0 24 24"
+                      strokeLinecap="round"
+                      strokeWidth="2"
+                    >
+                      <polyline
+                        fill="none"
+                        stroke="currentColor"
+                        points="6,12 10,16 18,8"
+                      />
+                      <circle
+                        cx="12"
+                        cy="12"
+                        fill="none"
+                        r="11"
+                        stroke="currentColor"
+                      />
+                    </svg>
+                  </div>
+                  <p className="font-medium text-gray-800">No hidden fees</p>
+                </li>
               </ul>
             </div>
           </div>
           <div>
-            <a
-              href="/"
-              className="mb-4 inline-flex h-12 w-full items-center justify-center rounded bg-primary px-6 font-medium tracking-wide text-white shadow-md transition duration-200 hover:bg-accent focus:outline-none"
-            >
-              Start for free
-            </a>
+            <Link href="/">
+              <a className="mb-4 inline-flex h-12 w-full items-center justify-center rounded bg-primary px-6 font-medium tracking-wide text-white shadow-md transition duration-200 hover:bg-accent focus:outline-none">
+                Start for free
+              </a>
+            </Link>
             <p className="text-sm text-gray-600">
               No credit card required. No commitment.
             </p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 export default Pricing;
