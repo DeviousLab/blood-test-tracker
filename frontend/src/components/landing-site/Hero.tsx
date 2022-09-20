@@ -1,4 +1,6 @@
 /* eslint-disable tailwindcss/no-custom-classname */
+import Image from 'next/image';
+
 import Dashboard from '../../assets/images/dashboard.svg';
 
 const Hero = () => {
@@ -26,12 +28,13 @@ const Hero = () => {
         </div>
         <div className="container mx-auto -mt-20 flex justify-center sm:-mt-40 md:-mt-56">
           <div className="relative w-11/12 sm:w-2/3">
-            <img
-              className="rounded drop-shadow-xl transition duration-300 ease-in hover:drop-shadow-2xl"
-              src={Dashboard.src}
-              alt="Sample dashboard page"
-              role="img"
-            />
+            <div className="drop-shadow-xl transition duration-300 ease-in hover:drop-shadow-2xl">
+              <Image
+                src={Dashboard}
+                alt="Sample dashboard page"
+                layout="intrinsic"
+              />
+            </div>
           </div>
         </div>
       </div>

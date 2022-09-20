@@ -42,14 +42,14 @@ const Process = () => {
             <svg
               className="w-8 rotate-90 text-white lg:rotate-0"
               stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               viewBox="0 0 24 24"
             >
               <line
                 fill="none"
-                stroke-miterlimit="10"
+                strokeMiterlimit="10"
                 x1="2"
                 y1="12"
                 x2="22"
@@ -57,7 +57,7 @@ const Process = () => {
               ></line>
               <polyline
                 fill="none"
-                stroke-miterlimit="10"
+                strokeMiterlimit="10"
                 points="15,5 22,12 15,19 "
               ></polyline>
             </svg>
@@ -84,14 +84,14 @@ const Process = () => {
             <svg
               className="w-8 rotate-90 text-white lg:rotate-0"
               stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               viewBox="0 0 24 24"
             >
               <line
                 fill="none"
-                stroke-miterlimit="10"
+                strokeMiterlimit="10"
                 x1="2"
                 y1="12"
                 x2="22"
@@ -99,7 +99,7 @@ const Process = () => {
               ></line>
               <polyline
                 fill="none"
-                stroke-miterlimit="10"
+                strokeMiterlimit="10"
                 points="15,5 22,12 15,19 "
               ></polyline>
             </svg>
@@ -126,14 +126,14 @@ const Process = () => {
             <svg
               className="w-8 rotate-90 text-white lg:rotate-0"
               stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               viewBox="0 0 24 24"
             >
               <line
                 fill="none"
-                stroke-miterlimit="10"
+                strokeMiterlimit="10"
                 x1="2"
                 y1="12"
                 x2="22"
@@ -141,7 +141,7 @@ const Process = () => {
               ></line>
               <polyline
                 fill="none"
-                stroke-miterlimit="10"
+                strokeMiterlimit="10"
                 points="15,5 22,12 15,19 "
               ></polyline>
             </svg>
