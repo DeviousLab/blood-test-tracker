@@ -4,7 +4,7 @@ import { MdDocumentScanner, MdPrivacyTip } from 'react-icons/md';
 
 const Features = () => {
   return (
-    <section id="features" className="mx-auto pt-16">
+    <section id="features" className="mx-auto h-screen pt-28">
       <div>
         <div role="contentinfo" className="flex flex-col items-center px-4">
           <p
