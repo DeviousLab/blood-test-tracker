@@ -6,7 +6,7 @@ const Banner = () => {
   return (
     <motion.section
       // eslint-disable-next-line tailwindcss/no-contradicting-classname
-      className="mx-auto w-2/3 rounded-md bg-primary bg-[url('../assets/images/BannerPattern.svg')] bg-cover bg-center bg-no-repeat"
+      className="w-screen rounded-md bg-primary bg-[url('../assets/images/BannerPattern.svg')] bg-cover bg-center bg-no-repeat object-center lg:mx-auto lg:w-2/3"
       initial={{ scale: 0.5, opacity: 0 }}
       whileInView={{
         scale: 1,

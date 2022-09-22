@@ -8,7 +8,7 @@ import RightTopFeature from '../../assets/images/RightTopFeature.svg';
 
 const Highlight = () => {
   return (
-    <section className="mx-auto px-4 py-16 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8 lg:py-20">
+    <section className="mx-auto mt-16 px-4 py-16 sm:max-w-xl md:my-8 md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8 lg:py-20">
       <div className="grid gap-5 gap-y-10 lg:grid-cols-2">
         <motion.div
           className="flex flex-col justify-center"

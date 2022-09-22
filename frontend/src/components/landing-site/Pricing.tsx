@@ -7,7 +7,7 @@ const Pricing = () => {
   return (
     <section
       id="pricing"
-      className="mx-auto h-screen px-4 py-16 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8 lg:py-28"
+      className="mx-auto px-4 py-16 sm:max-w-xl md:max-w-full md:px-24 lg:h-screen lg:max-w-screen-xl lg:px-8 lg:py-28"
     >
       <motion.div
         className="mb-10 max-w-xl sm:text-center md:mx-auto md:mb-12 lg:max-w-2xl"
