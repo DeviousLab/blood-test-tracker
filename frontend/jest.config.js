@@ -28,7 +28,7 @@ const customJestConfig = {
       lines: 80,
       statements: 80,
     },
-  }
+  },
 };
 
 module.exports = createJestConfig(customJestConfig);
