@@ -1,11 +1,20 @@
 /* eslint-disable tailwindcss/no-custom-classname */
-
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 const Banner = () => {
   return (
-    // eslint-disable-next-line tailwindcss/no-contradicting-classname
-    <section className="mx-auto w-2/3 rounded-md bg-primary bg-[url('../assets/images/BannerPattern.svg')] bg-cover bg-center bg-no-repeat">
+    <motion.section
+      // eslint-disable-next-line tailwindcss/no-contradicting-classname
+      className="mx-auto w-2/3 rounded-md bg-primary bg-[url('../assets/images/BannerPattern.svg')] bg-cover bg-center bg-no-repeat"
+      initial={{ scale: 0.5, opacity: 0 }}
+      whileInView={{
+        scale: 1,
+        opacity: 1,
+        transition: { ease: 'easeOut', duration: 1 },
+      }}
+      viewport={{ once: true }}
+    >
       <div className="mx-auto max-w-2xl py-16 px-4 text-center sm:py-20 sm:px-6 lg:px-8">
         <h2 className="font-Inter text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
           <span className="block">Make tracking your health easier.</span>
@@ -17,7 +26,7 @@ const Banner = () => {
           </a>
         </Link>
       </div>
-    </section>
+    </motion.section>
   );
 };
 export default Banner;

@@ -1,4 +1,6 @@
 /* eslint-disable tailwindcss/no-custom-classname */
+import { motion } from 'framer-motion';
+
 const Process = () => {
   return (
     <section
@@ -6,7 +8,17 @@ const Process = () => {
       // eslint-disable-next-line tailwindcss/no-contradicting-classname
       className="h-screen bg-primary bg-[url('../assets/images/ProcessPattern.png')] bg-cover bg-center bg-no-repeat px-4 py-16 sm:max-w-xl md:max-w-full md:px-24 lg:w-screen lg:px-8 lg:py-60"
     >
-      <div role="contentinfo" className="flex flex-col items-center px-4">
+      <motion.div
+        role="contentinfo"
+        className="flex flex-col items-center px-4"
+        initial={{ y: 300, opacity: 0 }}
+        whileInView={{
+          y: 0,
+          opacity: 1,
+          transition: { ease: 'easeOut', duration: 1 },
+        }}
+        viewport={{ once: true }}
+      >
         <p
           tabIndex={0}
           className="text-center font-Arimo text-sm font-bold uppercase leading-4 tracking-widest text-white focus:outline-none"
@@ -19,8 +31,18 @@ const Process = () => {
         >
           Process
         </h2>
-      </div>
-      <div className="mt-20 grid gap-8 gap-y-0 font-Arimo lg:grid-cols-4">
+      </motion.div>
+      <motion.div
+        className="mt-20 grid gap-8 gap-y-0 font-Arimo lg:grid-cols-4"
+        aria-label="group of process steps"
+        initial={{ y: 300, opacity: 0 }}
+        whileInView={{
+          y: 0,
+          opacity: 1,
+          transition: { ease: 'easeOut', duration: 1, delay: 0.2 },
+        }}
+        viewport={{ once: true }}
+      >
         <div className="relative text-center">
           <div className="mx-auto mb-8 flex h-16 w-16 items-center justify-center rounded-3xl bg-indigo-50 text-3xl font-bold text-logo shadow-xl sm:h-20 sm:w-20">
             1
@@ -165,7 +187,7 @@ const Process = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

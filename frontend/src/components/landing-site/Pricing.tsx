@@ -1,5 +1,6 @@
 /* eslint-disable tailwindcss/no-custom-classname */
 
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 const Pricing = () => {
@@ -8,7 +9,16 @@ const Pricing = () => {
       id="pricing"
       className="mx-auto h-screen px-4 py-16 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8 lg:py-28"
     >
-      <div className="mb-10 max-w-xl sm:text-center md:mx-auto md:mb-12 lg:max-w-2xl">
+      <motion.div
+        className="mb-10 max-w-xl sm:text-center md:mx-auto md:mb-12 lg:max-w-2xl"
+        initial={{ y: 300, opacity: 0 }}
+        whileInView={{
+          y: 0,
+          opacity: 1,
+          transition: { ease: 'easeOut', duration: 1 },
+        }}
+        viewport={{ once: true }}
+      >
         <div>
           <p
             tabIndex={0}
@@ -28,8 +38,18 @@ const Pricing = () => {
           So, I&apos;m offering this service for free. However, if you would
           like to support me, you can do so by buying me a coffee.
         </p>
-      </div>
-      <div className="max-w-md sm:mx-auto lg:max-w-screen-md">
+      </motion.div>
+      <motion.div
+        className="max-w-md sm:mx-auto lg:max-w-screen-md"
+        aria-label="pricing option"
+        initial={{ y: 300, opacity: 0 }}
+        whileInView={{
+          y: 0,
+          opacity: 1,
+          transition: { ease: 'easeOut', duration: 1, delay: 0.2 },
+        }}
+        viewport={{ once: true }}
+      >
         <div className="flex flex-col justify-between rounded border bg-white p-5 font-Arimo shadow-sm">
           <div className="mb-6">
             <div className="mb-4 flex items-center justify-between border-b pb-4">
@@ -37,9 +57,35 @@ const Pricing = () => {
                 <p className="text-sm font-bold uppercase tracking-widest text-primary">
                   Personal use
                 </p>
-                <p className="font-Inter text-5xl font-extrabold tracking-tight">
+                <motion.p
+                  className="font-Inter text-5xl font-extrabold tracking-tight text-transparent"
+                  initial={{ color: '#000', scale: 0.8 }}
+                  whileInView={{
+                    color: [
+                      '#0978FE',
+                      '#0654B2',
+                      '#3A22FE',
+                      '#09FEB5',
+                      '#06B27E',
+                      '#02073E',
+                    ],
+                    scale: 1,
+                    transition: {
+                      ease: 'backOut',
+                      duration: 3,
+                    },
+                  }}
+                  transition={{
+                    type: 'spring',
+                    damping: 10,
+                    mass: 0.75,
+                    stiffness: 100,
+                    duration: 3,
+                  }}
+                  viewport={{ once: true }}
+                >
                   Free
-                </p>
+                </motion.p>
               </div>
             </div>
             <div>
@@ -158,7 +204,7 @@ const Pricing = () => {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

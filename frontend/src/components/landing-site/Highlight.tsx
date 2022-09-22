@@ -1,4 +1,5 @@
 /* eslint-disable tailwindcss/no-custom-classname */
+import { motion } from 'framer-motion';
 
 import HighlightPicture from '../../assets/images/HighlightPicture.webp';
 import LeftFeature from '../../assets/images/LeftFeature.svg';
@@ -9,7 +10,16 @@ const Highlight = () => {
   return (
     <section className="mx-auto px-4 py-16 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8 lg:py-20">
       <div className="grid gap-5 gap-y-10 lg:grid-cols-2">
-        <div className="flex flex-col justify-center">
+        <motion.div
+          className="flex flex-col justify-center"
+          initial={{ opacity: 0, x: -200 }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+            transition: { ease: 'easeOut', duration: 1 },
+          }}
+          viewport={{ once: true }}
+        >
           <div className="relative mb-6 max-w-xl">
             <img
               className="absolute -left-16 -top-16 -z-[1]"
@@ -38,8 +48,17 @@ const Highlight = () => {
               the touch of a button on our dashboard
             </p>
           </div>
-        </div>
-        <div className="relative">
+        </motion.div>
+        <motion.div
+          className="relative"
+          initial={{ opacity: 0, x: 200 }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+            transition: { ease: 'easeOut', duration: 1 },
+          }}
+          viewport={{ once: true }}
+        >
           <img
             className="absolute -left-16 -top-16 -z-[1] hidden md:block"
             src={RightTopFeature.src}
@@ -55,7 +74,7 @@ const Highlight = () => {
             src={HighlightPicture.src}
             alt="a stack of paper reports"
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 /* eslint-disable tailwindcss/no-custom-classname */
+import { motion } from 'framer-motion';
 import { IoBarChart, IoDocumentsSharp } from 'react-icons/io5';
 import { MdDocumentScanner, MdPrivacyTip } from 'react-icons/md';
 
@@ -6,7 +7,17 @@ const Features = () => {
   return (
     <section id="features" className="mx-auto h-screen pt-28">
       <div>
-        <div role="contentinfo" className="flex flex-col items-center px-4">
+        <motion.div
+          role="contentinfo"
+          className="flex flex-col items-center px-4"
+          initial={{ y: 300, opacity: 0 }}
+          whileInView={{
+            y: 0,
+            opacity: 1,
+            transition: { ease: 'easeOut', duration: 1 },
+          }}
+          viewport={{ once: true }}
+        >
           <p
             tabIndex={0}
             className="text-center font-Arimo text-sm font-bold uppercase leading-4 tracking-widest text-primary focus:outline-none"
@@ -19,11 +30,18 @@ const Features = () => {
           >
             Features
           </h2>
-        </div>
-        <div
+        </motion.div>
+        <motion.div
           tabIndex={0}
           aria-label="group of features"
           className="mt-20 flex flex-wrap justify-center gap-10 px-4 focus:outline-none"
+          initial={{ y: 300, opacity: 0 }}
+          whileInView={{
+            y: 0,
+            opacity: 1,
+            transition: { ease: 'easeOut', duration: 1, delay: 0.2 },
+          }}
+          viewport={{ once: true }}
         >
           <div
             tabIndex={0}
@@ -133,7 +151,7 @@ const Features = () => {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
