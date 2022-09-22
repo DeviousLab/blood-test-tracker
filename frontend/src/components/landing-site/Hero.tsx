@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <section className="overflow-y-hidden py-12">
       <div className="w-full px-6">
-        <div className="container relative mx-auto mt-8 flex flex-col items-center rounded-lg bg-primary bg-[url('../assets/images/ProcessPattern.png')] bg-cover bg-no-repeat pt-12 pb-24 sm:pt-24 sm:pb-32 md:pb-48 lg:pb-56 xl:pb-64">
+        <div className="container relative mx-auto mt-8 flex flex-col items-center rounded-lg bg-primary bg-[url('/img/ProcessPattern.svg')] bg-cover bg-no-repeat pt-12 pb-24 sm:pt-24 sm:pb-32 md:pb-48 lg:pb-56 xl:pb-64">
           <motion.div
             className="mb-5 w-11/12 sm:mb-10 sm:w-2/3"
             initial={{ y: 300, opacity: 0 }}
