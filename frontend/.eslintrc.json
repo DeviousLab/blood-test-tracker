@@ -82,7 +82,7 @@
       "plugins": ["cypress"],
       "extends": ["plugin:cypress/recommended"],
       "parserOptions": {
-        "project": "./frontend/cypress/tsconfig.json"
+        "project": "./cypress/tsconfig.json"
       }
     }
   ]

@@ -1,3 +1,6 @@
+// eslint-disable-next-line import/extensions
+import './workaround-cypress-10-0-2-process-issue';
+
 describe('Seo metadata', () => {
   describe('Verify SEO Metadata', () => {
     it('should render SEO metadata on Index page', () => {
