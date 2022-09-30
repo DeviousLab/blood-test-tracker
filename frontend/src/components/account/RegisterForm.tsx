@@ -1,5 +1,55 @@
 /* eslint-disable tailwindcss/no-custom-classname */
+
+import { zodResolver } from '@hookform/resolvers/zod';
+import type { SubmitHandler } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+
+const RegisterUserSchema = z
+  .object({
+    email: z
+      .string()
+      .min(1, { message: 'An email is required' })
+      .email({ message: 'The email is invalid' }),
+    password: z
+      .string({
+        required_error: 'A password is required',
+      })
+      .min(8, 'Password must be at least 8 characters long'),
+    confirmPassword: z
+      .string({
+        required_error: 'Please confirm your password',
+      })
+      .min(8, 'Password must be at least 8 characters long'),
+    accept: z.literal(true, {
+      invalid_type_error: 'You must accept the terms and conditions',
+    }),
+  })
+  .superRefine(({ confirmPassword, password }, ctx) => {
+    if (confirmPassword !== password) {
+      ctx.addIssue({
+        code: 'custom',
+        message: 'The passwords do not match',
+        path: ['confirmPassword'],
+      });
+    }
+  });
+
+type RegisterUserSchemaType = z.infer<typeof RegisterUserSchema>;
+
 const RegisterForm = () => {
+  const {
+    register,
+    watch,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<RegisterUserSchemaType>({
+    resolver: zodResolver(RegisterUserSchema),
+  });
+
+  const onSubmit: SubmitHandler<RegisterUserSchemaType> = (data) => {
+    console.log(data);
+  };
   return (
     <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-lg">
@@ -8,7 +58,7 @@ const RegisterForm = () => {
         </h1>
 
         <form
-          action=""
+          onSubmit={handleSubmit(onSubmit)}
           className="mt-6 mb-0 space-y-4 rounded-lg bg-gray-50 p-8 font-Arimo text-logo"
         >
           <p className="text-lg font-medium">Sign up for an account</p>
@@ -24,8 +74,8 @@ const RegisterForm = () => {
                 id="email"
                 className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
                 placeholder="Enter email"
+                {...register('email')}
               />
-
               <span className="absolute inset-y-0 right-4 inline-flex items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -35,14 +85,19 @@ const RegisterForm = () => {
                   stroke="currentColor"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
                   />
                 </svg>
               </span>
             </div>
+            {errors.email && (
+              <p className="mt-1 text-sm text-red-600">
+                {errors.email.message}
+              </p>
+            )}
           </div>
 
           <div>
@@ -56,8 +111,8 @@ const RegisterForm = () => {
                 id="password"
                 className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
                 placeholder="Enter password"
+                {...register('password')}
               />
-
               <span className="absolute inset-y-0 right-4 inline-flex items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -67,20 +122,25 @@ const RegisterForm = () => {
                   stroke="currentColor"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
                   />
                 </svg>
               </span>
             </div>
+            {errors.password && (
+              <p className="mt-1 text-sm text-red-600">
+                {errors.password.message}
+              </p>
+            )}
           </div>
 
           <div>
@@ -91,11 +151,11 @@ const RegisterForm = () => {
             <div className="relative mt-1">
               <input
                 type="password"
-                id="password"
+                id="confirmPassword"
                 className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
                 placeholder="Enter password"
+                {...register('confirmPassword')}
               />
-
               <span className="absolute inset-y-0 right-4 inline-flex items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -105,21 +165,55 @@ const RegisterForm = () => {
                   stroke="currentColor"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
                   />
                 </svg>
               </span>
             </div>
+            {errors.confirmPassword && (
+              <p className="mt-1 text-sm text-red-600">
+                {errors.confirmPassword.message}
+              </p>
+            )}
           </div>
+
+          <div className="flex items-center">
+            <div className="flex">
+              <input
+                id="accept-terms"
+                type="checkbox"
+                className="mt-0.5 shrink-0 rounded border-gray-200 text-blue-600 focus:ring-blue-500"
+                {...register('accept')}
+              />
+            </div>
+            <div className="ml-3">
+              <label htmlFor="accept-terms" className="text-sm">
+                I have read and agree to the{' '}
+                <a
+                  className="font-medium text-blue-600 decoration-2 hover:underline"
+                  href="#"
+                >
+                  Terms of Service
+                </a>
+              </label>
+              {errors.accept && (
+                <p className="mt-1 text-sm text-red-600">
+                  {errors.accept.message}
+                </p>
+              )}
+            </div>
+          </div>
+
+          <pre>{JSON.stringify(watch(), null, 2)}</pre>
 
           <button
             type="submit"
