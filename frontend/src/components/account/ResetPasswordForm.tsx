@@ -100,7 +100,6 @@ const ResetPasswordForm = () => {
               </p>
             )}
           </div>
-          <pre>{JSON.stringify(watch(), null, 2)}</pre>
 
           <button
             type="submit"

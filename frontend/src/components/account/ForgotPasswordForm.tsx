@@ -12,7 +12,6 @@ type ForgotPasswordSchemaType = z.infer<typeof ForgotPasswordSchema>;
 const ForgotPasswordForm = () => {
   const {
     register,
-    watch,
     handleSubmit,
     formState: { errors },
   } = useForm<ForgotPasswordSchemaType>({
@@ -60,8 +59,6 @@ const ForgotPasswordForm = () => {
               </p>
             )}
           </div>
-
-          <pre>{JSON.stringify(watch(), null, 2)}</pre>
 
           <button
             type="submit"

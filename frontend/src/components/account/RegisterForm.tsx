@@ -152,8 +152,6 @@ const RegisterForm = () => {
             </div>
           </div>
 
-          <pre>{JSON.stringify(watch(), null, 2)}</pre>
-
           <button
             type="submit"
             className="block w-full rounded-lg bg-primary px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-accent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-white"

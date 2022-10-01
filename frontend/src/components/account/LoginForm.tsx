@@ -15,7 +15,6 @@ type LoginUserSchemaType = z.infer<typeof LoginUserSchema>;
 const LoginForm = () => {
   const {
     register,
-    watch,
     handleSubmit,
     formState: { errors },
   } = useForm<LoginUserSchemaType>({
@@ -100,8 +99,6 @@ const LoginForm = () => {
               </p>
             )}
           </div>
-
-          <pre>{JSON.stringify(watch(), null, 2)}</pre>
 
           <button
             type="submit"
