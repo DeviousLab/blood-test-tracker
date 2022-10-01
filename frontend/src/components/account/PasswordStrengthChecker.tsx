@@ -88,7 +88,7 @@ const PasswordStrengthChecker = ({ password }: PasswordProps) => {
           <div className="mr-2 text-right">
             <div>
               <span
-                className="inline-block rounded-full py-1 px-2 text-sm font-semibold uppercase"
+                className="mt-1 inline-block rounded-full py-1 px-2 text-sm font-semibold uppercase"
                 style={{
                   color: ProgressColor(),
                   backgroundColor: ProgressColorBackground(),
