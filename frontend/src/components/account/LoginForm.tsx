@@ -148,9 +148,9 @@ const LoginForm = () => {
 
           <p className="text-center text-sm text-gray-500">
             Don't have an account yet?
-            <a className="ml-1 underline" href="/account/register">
-              Sign up here
-            </a>
+            <Link href="/account/register">
+              <a className="ml-1 underline">Sign up here</a>
+            </Link>
           </p>
         </form>
       </div>

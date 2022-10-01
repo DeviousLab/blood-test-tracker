@@ -1,4 +1,5 @@
 import { zodResolver } from '@hookform/resolvers/zod';
+import Link from 'next/link';
 import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 import { IoAtOutline } from 'react-icons/io5';
@@ -71,9 +72,9 @@ const ForgotPasswordForm = () => {
 
           <p className="text-center text-sm text-gray-500">
             Remember your password?
-            <a className="ml-1 underline" href="/account">
-              Sign in here
-            </a>
+            <Link href="/account">
+              <a className="ml-1 underline">Sign in here</a>
+            </Link>
           </p>
         </form>
       </div>

@@ -1,6 +1,7 @@
 /* eslint-disable tailwindcss/no-custom-classname */
 
 import { zodResolver } from '@hookform/resolvers/zod';
+import Link from 'next/link';
 import { useState } from 'react';
 import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
@@ -196,9 +197,9 @@ const RegisterForm = () => {
 
           <p className="text-center text-sm text-gray-500">
             Already have an account?
-            <a className="ml-1 underline" href="/account">
-              Sign in here
-            </a>
+            <Link href="/account">
+              <a className="ml-1 underline">Sign in here</a>
+            </Link>
           </p>
         </form>
       </div>
