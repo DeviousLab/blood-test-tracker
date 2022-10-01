@@ -2,9 +2,8 @@
   // Configuration for JavaScript files
   "extends": [
     "airbnb-base",
-    "next/core-web-vitals", // Needed to avoid warning in next.js build: 'The Next.js plugin was not detected in your ESLint configuration'
     "plugin:prettier/recommended",
-    "next"
+    "plugin:@next/next/recommended"
   ],
   "rules": {
     "prettier/prettier": [
@@ -28,9 +27,8 @@
       "extends": [
         "plugin:tailwindcss/recommended",
         "airbnb-typescript",
-        "next/core-web-vitals",
         "plugin:prettier/recommended",
-        "next"
+        "plugin:@next/next/recommended"
       ],
       "parserOptions": {
         "project": "**/tsconfig.json"
@@ -63,7 +61,8 @@
         "import/no-extraneous-dependencies": [
           "error",
           { "devDependencies": true }
-        ]
+        ],
+        "react/jsx-filename-extension": "off" // Allow .tsx extension
       }
     },
     // Configuration for testing

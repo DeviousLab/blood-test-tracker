@@ -6,7 +6,7 @@ const Process = () => {
     <section
       id="process"
       // eslint-disable-next-line tailwindcss/no-contradicting-classname
-      className="bg-primary bg-[url('../assets/images/ProcessPattern.png')] bg-cover bg-center bg-no-repeat px-4 py-16 md:max-w-full md:px-24 lg:w-screen lg:px-8 lg:py-72"
+      className="bg-primary bg-[url('/img/ProcessPattern.svg')] bg-cover bg-center bg-no-repeat px-4 py-16 md:max-w-full md:px-24 lg:w-screen lg:px-8 lg:py-72"
     >
       <motion.div
         role="contentinfo"

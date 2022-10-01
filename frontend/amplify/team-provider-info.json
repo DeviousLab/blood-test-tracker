@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-triage-dev-234843-authRole",
+      "UnauthRoleArn": "arn:aws:iam::349434080454:role/amplify-triage-dev-234843-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::349434080454:role/amplify-triage-dev-234843-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-triage-dev-234843-deployment",
+      "UnauthRoleName": "amplify-triage-dev-234843-unauthRole",
+      "StackName": "amplify-triage-dev-234843",
+      "StackId": "arn:aws:cloudformation:eu-central-1:349434080454:stack/amplify-triage-dev-234843/3c33c420-3dd4-11ed-bfec-0ad4c7f4d434",
+      "AmplifyAppId": "d3nhbfpi4tfnhf"
+    }
+  }
+}
