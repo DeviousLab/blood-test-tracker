@@ -11,6 +11,7 @@ import {
 import type { z } from 'zod';
 
 import { ResetPasswordSchema } from '../../utils/zodSchema';
+import PasswordStrengthChecker from './PasswordStrengthChecker';
 
 type ResetPasswordSchemaType = z.infer<typeof ResetPasswordSchema>;
 
@@ -92,6 +93,7 @@ const ResetPasswordForm = () => {
                 </button>
               </span>
             </div>
+            <PasswordStrengthChecker password={watch('password')} />
             {errors.password && (
               <p className="mt-1 text-sm text-red-600">
                 {errors.password.message}

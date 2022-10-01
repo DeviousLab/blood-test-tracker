@@ -9,6 +9,7 @@ import { IoAtOutline, IoEyeOffOutline, IoEyeOutline } from 'react-icons/io5';
 import type { z } from 'zod';
 
 import { RegisterUserSchema } from '../../utils/zodSchema';
+import PasswordStrengthChecker from './PasswordStrengthChecker';
 
 type RegisterUserSchemaType = z.infer<typeof RegisterUserSchema>;
 
@@ -86,6 +87,7 @@ const RegisterForm = () => {
                 </button>
               </span>
             </div>
+            <PasswordStrengthChecker password={watch('password')} />
             {errors.password && (
               <p className="mt-1 text-sm text-red-600">
                 {errors.password.message}
