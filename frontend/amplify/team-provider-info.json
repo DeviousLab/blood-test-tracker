@@ -10,6 +10,11 @@
       "StackName": "amplify-triage-dev-234843",
       "StackId": "arn:aws:cloudformation:eu-central-1:349434080454:stack/amplify-triage-dev-234843/3c33c420-3dd4-11ed-bfec-0ad4c7f4d434",
       "AmplifyAppId": "d3nhbfpi4tfnhf"
+    },
+    "categories": {
+      "auth": {
+        "triagef65cb7e5": {}
+      }
     }
   }
 }
