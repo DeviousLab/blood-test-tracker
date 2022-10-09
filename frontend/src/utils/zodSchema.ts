@@ -58,3 +58,10 @@ export const ResetPasswordSchema = z.object({
     .string({ required_error: 'A password is required' })
     .min(8, 'Password must be at least 8 characters long'),
 });
+
+export const ConfirmCodeSchema = z.object({
+  code: z
+    .string()
+    .min(1, { message: 'A code is required' })
+    .max(6, { message: 'The code is invalid' }),
+});
