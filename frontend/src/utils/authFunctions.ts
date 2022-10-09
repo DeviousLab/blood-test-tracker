@@ -19,6 +19,12 @@ export async function signUp(
     const { user, userConfirmed, userSub } = await Auth.signUp({
       username: email,
       password,
+      attributes: {
+        email,
+      },
+      autoSignIn: {
+        enabled: true,
+      },
     });
     return {
       user,
