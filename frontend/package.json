@@ -25,6 +25,7 @@
     "prepare": "cd .. && husky install frontend/.husky"
   },
   "dependencies": {
+    "@aws-amplify/auth": "^4.6.8",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@hookform/resolvers": "^2.9.8",
@@ -33,12 +34,14 @@
     "@zxcvbn-ts/core": "^2.0.5",
     "@zxcvbn-ts/language-common": "^2.0.1",
     "@zxcvbn-ts/language-en": "^2.1.0",
+    "aws-amplify": "^4.3.37",
     "framer-motion": "^7.3.6",
     "next": "^12.3.0",
     "next-seo": "^5.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.36.1",
+    "react-hot-toast": "^2.4.0",
     "zod": "^3.19.1"
   },
   "devDependencies": {

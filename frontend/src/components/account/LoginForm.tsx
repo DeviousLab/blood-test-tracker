@@ -2,12 +2,15 @@
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 import { IoAtOutline, IoEyeOffOutline, IoEyeOutline } from 'react-icons/io5';
 import type { z } from 'zod';
 
+import { signIn } from '../../utils/authFunctions';
 import { LoginUserSchema } from '../../utils/zodSchema';
 
 type LoginUserSchemaType = z.infer<typeof LoginUserSchema>;
@@ -15,16 +18,38 @@ type LoginUserSchemaType = z.infer<typeof LoginUserSchema>;
 const LoginForm = () => {
   const {
     register,
-    watch,
     handleSubmit,
     formState: { errors },
   } = useForm<LoginUserSchemaType>({
     resolver: zodResolver(LoginUserSchema),
   });
   const [showPassword, setShowPassword] = useState(false);
+  const router = useRouter();
 
-  const onSubmit: SubmitHandler<LoginUserSchemaType> = (data) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<LoginUserSchemaType> = ({
+    email,
+    password,
+  }) => {
+    signIn(email, password)
+      .then(() => {
+        router.push('/dashboard');
+        toast.success('Logged in successfully');
+      })
+      .catch((error) => {
+        switch (error.toString()) {
+          case 'UserNotFoundException':
+            toast.error('User not found');
+            break;
+          case 'NotAuthorizedException: Incorrect username or password.':
+            toast.error('Incorrect email or password');
+            break;
+          case 'UserNotConfirmedException: User is not confirmed.':
+            toast.error('User not confirmed');
+            break;
+          default:
+            toast.error(error.toString());
+        }
+      });
   };
   return (
     <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
@@ -100,8 +125,6 @@ const LoginForm = () => {
               </p>
             )}
           </div>
-
-          <pre>{JSON.stringify(watch(), null, 2)}</pre>
 
           <button
             type="submit"

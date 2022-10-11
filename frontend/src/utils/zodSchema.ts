@@ -29,7 +29,7 @@ export const RegisterUserSchema = z
       })
       .min(8, 'Password must be at least 8 characters long'),
     accept: z.literal(true, {
-      invalid_type_error: 'You must accept the terms and conditions',
+      errorMap: () => ({ message: 'You must accept Terms and Services' }),
     }),
   })
   .superRefine(({ confirmPassword, password }, ctx) => {
@@ -57,4 +57,11 @@ export const ResetPasswordSchema = z.object({
   password: z
     .string({ required_error: 'A password is required' })
     .min(8, 'Password must be at least 8 characters long'),
+});
+
+export const ConfirmCodeSchema = z.object({
+  code: z
+    .string()
+    .min(1, { message: 'A code is required' })
+    .max(6, { message: 'The code is invalid' }),
 });

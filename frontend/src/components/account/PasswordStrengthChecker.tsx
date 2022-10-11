@@ -79,12 +79,12 @@ const PasswordStrengthChecker = ({ password }: PasswordProps) => {
 
   return (
     <>
-      <div className="relative">
-        <div
-          className="mb-1 flex h-2 overflow-hidden rounded text-xs"
-          style={changePasswordColor()}
-        ></div>
-        {passwordStrength.score >= 1 && (
+      {passwordStrength.score >= 1 && (
+        <div className="relative">
+          <div
+            className="mb-1 flex h-2 overflow-hidden rounded text-xs"
+            style={changePasswordColor()}
+          ></div>
           <div className="mr-2 text-right">
             <div>
               <span
@@ -98,8 +98,8 @@ const PasswordStrengthChecker = ({ password }: PasswordProps) => {
               </span>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </>
   );
 };
