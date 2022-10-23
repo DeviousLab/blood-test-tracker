@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
-  important: '#__next',
   theme: {
     fontSize: {
       xs: '0.75rem',
@@ -33,7 +32,4 @@ module.exports = {
   },
   // eslint-disable-next-line global-require
   plugins: [require('@tailwindcss/forms')],
-  corePlugins: {
-    preflight: false,
-  },
 };
